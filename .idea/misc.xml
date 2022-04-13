@@ -3,7 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.26870269775390626" />
+        <entry key="app/src/main/res/drawable/bug_active.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/bug_inactive.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/category_active.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/category_inactive.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/favourite_active.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/favourite_inactive.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/home_active.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/home_inactive.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/home_selected.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/profile_active.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/profile_inactive.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/sl_category.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/sl_home.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/sl_order.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/sl_product.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/sl_qr.xml" value="0.198" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24785614013671878" />
+        <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
