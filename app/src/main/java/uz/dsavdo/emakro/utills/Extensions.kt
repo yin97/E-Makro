@@ -8,7 +8,9 @@ fun Activity.changeColorStatusBar(isChange: Boolean) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         val decor: View = this.window.decorView
         if (isChange) {
-            decor.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                decor.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or  View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+            }
         } else {
             decor.systemUiVisibility = 0
         }

@@ -3,17 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/basket_count_background.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/bug_active.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/bug_inactive.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/category_active.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/category_inactive.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/daily_product_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/favourite_active.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/favourite_inactive.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/home_active.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/home_inactive.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/home_selected.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/ic_baseline_qr_code_24.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/ic_baseline_shopping_basket_24.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/ll_search.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/profile_active.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/profile_inactive.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/sl_category.xml" value="0.198" />
@@ -21,7 +28,13 @@
         <entry key="app/src/main/res/drawable/sl_order.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/sl_product.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/sl_qr.xml" value="0.198" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24785614013671878" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.26556396484375" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2509799746751259" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_daily_product.xml" value="0.4099652013034686" />
+        <entry key="app/src/main/res/layout/item_news.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_promotion.xml" value="0.18614130434782608" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.1" />
       </map>
     </option>
