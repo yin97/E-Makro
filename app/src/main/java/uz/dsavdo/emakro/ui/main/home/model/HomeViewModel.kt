@@ -1,15 +1,7 @@
-package uz.dsavdo.emakro.ui.home
+package uz.dsavdo.emakro.ui.main.home.model
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
-import org.imaginativeworld.whynotimagecarousel.model.CarouselType
-import uz.dsavdo.emakro.R
-import uz.dsavdo.emakro.databinding.FragmentHomeBinding
-import uz.dsavdo.emakro.ui.home.model.DailyProduct
-import uz.dsavdo.emakro.ui.home.model.News
-import uz.dsavdo.emakro.ui.home.model.Promotion
 
 class HomeViewModel : ViewModel() {
 
@@ -17,11 +9,11 @@ class HomeViewModel : ViewModel() {
     val promotions = MutableLiveData<ArrayList<Promotion>>()
     val news = MutableLiveData<ArrayList<News>>()
 
-    fun addData() {
+    fun addData(itemType: ViewType) {
         val products = ArrayList<DailyProduct>()
 
         repeat(15) { id ->
-            products.add(DailyProduct(id))
+            products.add(DailyProduct(id,itemType))
 
         }
 

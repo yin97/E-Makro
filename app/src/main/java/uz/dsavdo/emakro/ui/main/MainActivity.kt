@@ -1,18 +1,18 @@
-package uz.dsavdo.emakro
+package uz.dsavdo.emakro.ui.main
 
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
+import uz.dsavdo.emakro.R
 import uz.dsavdo.emakro.databinding.ActivityMainBinding
 import uz.dsavdo.emakro.utills.changeColorStatusBar
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
 
     private val navController by lazy(LazyThreadSafetyMode.NONE) {
         Navigation.findNavController(

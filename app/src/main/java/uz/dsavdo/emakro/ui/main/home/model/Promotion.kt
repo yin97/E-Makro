@@ -1,4 +1,4 @@
-package uz.dsavdo.emakro.ui.home.model
+package uz.dsavdo.emakro.ui.main.home.model
 
 import android.view.View
 import com.mikepenz.fastadapter.FastAdapter

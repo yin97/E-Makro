@@ -1,4 +1,4 @@
-package uz.dsavdo.emakro.ui.dashboard
+package uz.dsavdo.emakro.ui.main.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater

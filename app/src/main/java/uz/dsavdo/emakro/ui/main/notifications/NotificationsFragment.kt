@@ -1,4 +1,4 @@
-package uz.dsavdo.emakro.ui.notifications
+package uz.dsavdo.emakro.ui.main.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

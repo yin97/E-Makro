@@ -9,6 +9,10 @@
         <entry key="app/src/main/res/drawable/category_active.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/category_inactive.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/daily_product_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/enter_background.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/enter_gradient.xml" value="0.185" />
+        <entry key="app/src/main/res/drawable/enter_phone_background.xml" value="0.185" />
+        <entry key="app/src/main/res/drawable/enter_top_background.xml" value="0.143" />
         <entry key="app/src/main/res/drawable/favourite_active.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/favourite_inactive.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/home_active.xml" value="0.1705" />
@@ -20,20 +24,30 @@
         <entry key="app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/ic_baseline_shopping_basket_24.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/language_select.xml" value="0.185" />
+        <entry key="app/src/main/res/drawable/language_unselect.xml" value="0.185" />
         <entry key="app/src/main/res/drawable/ll_search.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/next_button.xml" value="0.185" />
         <entry key="app/src/main/res/drawable/profile_active.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/profile_inactive.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/select_language_background.xml" value="0.185" />
         <entry key="app/src/main/res/drawable/sl_category.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/sl_home.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/sl_order.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/sl_product.xml" value="0.198" />
         <entry key="app/src/main/res/drawable/sl_qr.xml" value="0.198" />
+        <entry key="app/src/main/res/drawable/toolbar_searchview_background.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_enter.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26556396484375" />
+        <entry key="app/src/main/res/layout/fragment_all_daily.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2509799746751259" />
+        <entry key="app/src/main/res/layout/fragment_enter.xml" value="0.25918365478515626" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2432925967454384" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2028985507246377" />
         <entry key="app/src/main/res/layout/item_daily_product.xml" value="0.4099652013034686" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_product.xml" value="0.26958047415463976" />
         <entry key="app/src/main/res/layout/item_promotion.xml" value="0.18614130434782608" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.1" />
       </map>

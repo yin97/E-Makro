@@ -1,15 +1,12 @@
-package uz.dsavdo.emakro.ui.home
+package uz.dsavdo.emakro.ui.main.home.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mikepenz.fastadapter.FastAdapter
@@ -18,9 +15,8 @@ import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import org.imaginativeworld.whynotimagecarousel.model.CarouselType
 import uz.dsavdo.emakro.R
 import uz.dsavdo.emakro.databinding.FragmentHomeBinding
-import uz.dsavdo.emakro.ui.home.model.DailyProduct
-import uz.dsavdo.emakro.ui.home.model.News
-import uz.dsavdo.emakro.ui.home.model.Promotion
+import uz.dsavdo.emakro.ui.main.home.model.*
+import uz.dsavdo.emakro.utills.getQrCodeBitmap
 
 class HomeFragment : Fragment() {
 
@@ -39,10 +35,12 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        homeViewModel.addData()
+        homeViewModel.addData(ViewType.MAIN)
         homeViewModel.addPromotion()
         homeViewModel.addNews()
     }
+
+    private var loyaltyCardNumber:Long = 258500440250
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,12 +52,18 @@ class HomeFragment : Fragment() {
 
         startCarouselView()
 
+        binding.qrCode.setImageBitmap(loyaltyCardNumber.getQrCodeBitmap(requireContext()))
+
         homeViewModel.list.observe(viewLifecycleOwner) { products ->
             binding.dailyProductList.layoutManager =
                 LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
             binding.dailyProductList.adapter = fastAdapter
             itemAdapter.clear()
             itemAdapter.add(products)
+        }
+
+        binding.searchView.setOnClickListener {
+            findNavController().navigate(R.id.searchFragment)
         }
 
         homeViewModel.promotions.observe(viewLifecycleOwner) { promotions ->
@@ -70,16 +74,20 @@ class HomeFragment : Fragment() {
             pItemAdapter.add(promotions)
         }
 
-        homeViewModel.news.observe(viewLifecycleOwner){news->
+        homeViewModel.news.observe(viewLifecycleOwner) { news ->
             binding.newsList.layoutManager =
                 LinearLayoutManager(requireContext())
             binding.newsList.adapter = nFastAdapter
             nItemAdapter.clear()
-            news.forEach { e->
-                if (e.id<=3){
+            news.forEach { e ->
+                if (e.id <= 3) {
                     nItemAdapter.add(e)
                 }
             }
+        }
+
+        binding.tvAllDailyProduct.setOnClickListener {
+            findNavController().navigate(R.id.home_to_all_daily)
         }
 
 
