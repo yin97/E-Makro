@@ -1,10 +1,12 @@
 package uz.dsavdo.emakro.ui.enter
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 import uz.dsavdo.emakro.databinding.ActivityEnterBinding
 
+@AndroidEntryPoint
 class EnterActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEnterBinding

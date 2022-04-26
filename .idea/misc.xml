@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/bug_inactive.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/category_active.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/category_inactive.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/custom_keyboard_background.xml" value="0.185" />
         <entry key="app/src/main/res/drawable/daily_product_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/enter_background.xml" value="0.143" />
         <entry key="app/src/main/res/drawable/enter_gradient.xml" value="0.185" />
@@ -40,10 +41,13 @@
         <entry key="app/src/main/res/layout/activity_enter.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26556396484375" />
         <entry key="app/src/main/res/layout/fragment_all_daily.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/res/layout/fragment_check_sms.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_enter.xml" value="0.25918365478515626" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2432925967454384" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_pin_code.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/fragment_screen_lock.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2028985507246377" />
         <entry key="app/src/main/res/layout/item_daily_product.xml" value="0.4099652013034686" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.1" />

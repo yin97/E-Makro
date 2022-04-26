@@ -3,12 +3,14 @@
     package="uz.dsavdo.emakro">
 
     <application
+        android:name=".app.MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EMakro">
+        android:theme="@style/Theme.EMakro"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.enter.EnterActivity"
             android:exported="true">
@@ -23,6 +25,10 @@
             android:exported="true">
 
         </activity>
+
+        <activity
+            android:name="com.amirarcane.lockscreen.activity.EnterPinActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
     </application>
 

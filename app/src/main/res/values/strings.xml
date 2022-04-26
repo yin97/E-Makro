@@ -20,4 +20,9 @@
     <string name="text_welcome">Welcome!</string>
     <string name="text_next">Next</string>
     <string name="text_select_language">Select your language</string>
+    <string name="text_oferta">Нажимая \'Продолжить\' вы соглашаетесь \nс условиями оферты и даете согласие \nна обработку персональных данных</string>
+    <string name="forgot_pin">Forgot PIN?</string>
+    <string name="text_change_phone_number">Change phone number</string>
+    <string name="please_enter_nyour_pin">Please, enter \nyour pin</string>
+    <string name="text_auth_snack">Need Auth</string>
 </resources>

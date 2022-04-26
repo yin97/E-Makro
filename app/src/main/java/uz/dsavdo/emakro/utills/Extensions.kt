@@ -2,6 +2,7 @@ package uz.dsavdo.emakro.utills
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -11,19 +12,24 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.TextWatcher
 import android.text.style.ForegroundColorSpan
+import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter
 import com.redmadrobot.inputmask.MaskedTextChangedListener
 import com.redmadrobot.inputmask.helper.AffinityCalculationStrategy
 import uz.dsavdo.emakro.R
+import uz.dsavdo.emakro.ui.enter.EnterActivity
 
 fun Activity.changeColorStatusBar(isChange: Boolean) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -105,7 +111,7 @@ fun Long.getQrCodeBitmap(context: Context): Bitmap {
     }
 }
 
-fun EditText.setMaskOn(button: Button?=null,activity: Activity?,textView: TextView?=null){
+fun EditText.setMaskOn(button: Button? = null, activity: Activity?, textView: TextView? = null) {
     var phoneNumber = ""
     MaskedTextChangedListener.installOn(
         this,
@@ -145,3 +151,87 @@ fun View?.closeKeyboard(activity: Activity?) {
         imm.hideSoftInputFromWindow(this.windowToken, 0)
     }
 }
+
+fun Fragment.showSnackbar(snackbarText: String, timeLength: Int = Snackbar.LENGTH_SHORT) {
+    Snackbar.make(requireView(), snackbarText, timeLength)
+        .setBackgroundTint(ContextCompat.getColor(requireContext(), R.color.black_green))
+        .setActionTextColor(ContextCompat.getColor(requireContext(), android.R.color.white)).show()
+}
+
+fun Fragment.showSnackbarWithMargin(snackbarText: String, timeLength: Int = Snackbar.LENGTH_SHORT) {
+    val view = requireView()
+    val snackbar = Snackbar.make(view, snackbarText, timeLength)
+    val snackBarView: View = snackbar.view
+    val params = snackBarView.layoutParams as FrameLayout.LayoutParams
+
+    params.setMargins(
+        params.leftMargin + 48,
+        params.topMargin,
+        params.rightMargin + 48,
+        params.bottomMargin + 48
+    )
+
+    snackBarView.layoutParams = params
+
+    snackBarView.translationY = -(convertDpToPixel(48f, requireActivity()));
+    snackbar.setBackgroundTint(
+        ContextCompat.getColor(
+            requireContext(),
+            R.color.green
+        )
+    )
+        .setActionTextColor(ContextCompat.getColor(requireContext(), android.R.color.white))
+    snackbar.show()
+}
+
+fun Fragment.showSnackbarAuth(
+    snackbarText: String,
+    timeLength: Int = Snackbar.LENGTH_SHORT,
+    fab: FloatingActionButton? = null,
+) {
+    Snackbar.make(requireView(), snackbarText, timeLength)
+        .setAnchorView(fab)
+        .setAction(resources.getString(R.string.text_auth_snack)) {
+            startActivity(Intent(requireContext(), EnterActivity::class.java))
+        }
+        .setBackgroundTint(ContextCompat.getColor(requireContext(), R.color.green))
+        .setActionTextColor(ContextCompat.getColor(requireContext(), android.R.color.white))
+        .show()
+}
+
+fun convertDpToPixel(dp: Float, context: Context): Float {
+    return dp * (context.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
+}
+
+fun Fragment.getDialogProgressBar(): AlertDialog.Builder {
+    var builder: AlertDialog.Builder? = null
+
+    if (builder == null) {
+        builder = AlertDialog.Builder(this.requireContext())
+        val progressBar = ProgressBar(this.requireContext())
+        val lp: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        progressBar.layoutParams = lp
+        builder.setView(progressBar)
+    }
+    return builder
+}
+
+fun Context.getDialogProgressBar(): AlertDialog.Builder {
+    var builder: AlertDialog.Builder? = null
+
+    if (builder == null) {
+        builder = AlertDialog.Builder(this)
+        val progressBar = ProgressBar(this)
+        val lp: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        progressBar.layoutParams = lp
+        builder.setView(progressBar)
+    }
+    return builder
+}
+

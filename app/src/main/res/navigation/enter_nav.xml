@@ -10,4 +10,14 @@
         android:name="uz.dsavdo.emakro.ui.enter.EnterFragment"
         android:label="fragment_enter"
         tools:layout="@layout/fragment_enter" />
+    <fragment
+        android:id="@+id/screenLockFragment"
+        android:name="uz.dsavdo.emakro.ScreenLockFragment"
+        android:label="fragment_screen_lock"
+        tools:layout="@layout/fragment_screen_lock" />
+    <fragment
+        android:id="@+id/checkSmsFragment"
+        android:name="uz.dsavdo.emakro.CheckSmsFragment"
+        android:label="fragment_check_sms"
+        tools:layout="@layout/fragment_check_sms" />
 </navigation>
