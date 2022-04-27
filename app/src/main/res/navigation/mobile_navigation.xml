@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/homeFragment">
+    app:startDestination="@+id/testHomeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -63,4 +63,9 @@
         android:name="uz.dsavdo.emakro.AllDailyFragment"
         android:label="fragment_all_daily"
         tools:layout="@layout/fragment_all_daily" />
+    <fragment
+        android:id="@+id/testHomeFragment"
+        android:name="uz.dsavdo.emakro.TestHomeFragment"
+        android:label="fragment_test_home"
+        tools:layout="@layout/fragment_test_home" />
 </navigation>

@@ -1,16 +1,19 @@
 package uz.dsavdo.emakro
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
 import uz.dsavdo.emakro.databinding.FragmentScreenLockBinding
+import uz.dsavdo.emakro.network.Constants.Companion.LOGIN_ON
 import uz.dsavdo.emakro.ui.enter.EnterViewModel
+import uz.dsavdo.emakro.ui.main.MainActivity
+import uz.dsavdo.emakro.utills.SharedPrefs
 
 @AndroidEntryPoint
 class ScreenLockFragment : Fragment() {
@@ -50,6 +53,18 @@ class ScreenLockFragment : Fragment() {
         binding.ninethKeyboard.setOnClickListener { onNumberButtonClick(NINE) }
         binding.backKeyboard.setOnClickListener { onNumberButtonClick(BACK) }
 
+        viewModel.responseLogin.observe(viewLifecycleOwner) { res ->
+            if (res.status == true) {
+                val intent = Intent(activity, MainActivity::class.java)
+                startActivity(intent)
+                activity?.finish()
+                SharedPrefs(requireContext()).apply {
+                    setStatusLogin(LOGIN_ON)
+                    setPhone(res.data?.phone ?: "")
+                }
+            }
+        }
+
         return binding.root
     }
 
@@ -62,7 +77,11 @@ class ScreenLockFragment : Fragment() {
             if (currentValue.length != 4) {
                 binding.etPinCodeNumber.setText("${currentValue}${number}")
                 if (binding.etPinCodeNumber.text.toString().length == 4)
-                    viewModel.login(this,viewModel.phoneNumber, binding.etPinCodeNumber.text.toString())
+                    viewModel.login(
+                        this,
+                        viewModel.phoneNumber,
+                        binding.etPinCodeNumber.text.toString()
+                    )
             }
         } else {
             if (currentValue.length in 1..4) {

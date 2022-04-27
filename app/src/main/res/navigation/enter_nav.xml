@@ -20,4 +20,9 @@
         android:name="uz.dsavdo.emakro.CheckSmsFragment"
         android:label="fragment_check_sms"
         tools:layout="@layout/fragment_check_sms" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="uz.dsavdo.emakro.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

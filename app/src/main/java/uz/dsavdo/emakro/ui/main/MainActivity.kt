@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
+import dagger.hilt.android.AndroidEntryPoint
 import uz.dsavdo.emakro.R
 import uz.dsavdo.emakro.databinding.ActivityMainBinding
 import uz.dsavdo.emakro.utills.changeColorStatusBar
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding

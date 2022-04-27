@@ -70,6 +70,9 @@ dependencies {
     //Qr Code generate
     implementation 'com.google.zxing:core:3.4.1'
 
+    //Data Store
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+
     //Shadow color
     implementation 'tk.zielony:carbon:0.16.0.1'
 

@@ -37,21 +37,6 @@ class EnterFragment : Fragment() {
             viewModel.checkPhone(this, binding.etRegistrationNumber.getMaskedPhoneWithoutSpace())
         }
 
-        viewModel.responseCheckPhone.observe(viewLifecycleOwner) { res ->
-            when (res.nextStage) {
-                2 -> {
-                    if (res.message == "success") {
-                        findNavController().navigate(R.id.checkSmsFragment)
-                    }
-                }
-                4 -> {
-                    if (res.message == "success") {
-                        findNavController().navigate(R.id.screenLockFragment)
-                    }
-                }
-            }
-        }
-
         binding.tvOferta.setOnClickListener {
             val url = "${BASE_URL}pages/usloviya"
             val i = Intent(Intent.ACTION_VIEW)
