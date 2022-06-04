@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">E-Makro</string>
+    <string name="title_home">Home</string>
+    <string name="title_order">Order</string>
+    <string name="title_fab">Fab</string>
+    <string name="title_category">Category</string>
+    <string name="title_qr">QR Scanner</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="text_search">Search</string>
+    <string name="text_balance">Balance:</string>
+    <string name="text_points">Points</string>
+    <string name="text_monthly_expenses">Oylik\nExpenses</string>
+    <string name="text_promotions">Promoshin</string>
+    <string name="tv_all">Hammasi ></string>
+    <string name="text_product_for">Kunlik taklif</string>
+    <string name="text_news">Xabarlar</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_welcome">Xush kelibsiz!</string>
+    <string name="text_next">Keyingi</string>
+    <string name="text_select_language">Tilni tanlang</string>
+    <string name="text_oferta">\'Davom etish\' tugmasini bosish orqali siz \ntaklif shartlariga rozilik bildirasiz va \nshaxsiy ma\'lumotlarni qayta ishlashga rozilik bildirasiz.</string>
+    <string name="forgot_pin">PIN ni unutdingizmi?</string>
+    <string name="text_change_phone_number">Telefon raqamni o\`zgartirish</string>
+    <string name="please_enter_nyour_pin">Iltimos, pinni \nkiriting</string>
+    <string name="text_auth_snack">Ro\`yxattan otishingiz kerak</string>
+    <string name="dialogTitle">Chiqish</string>
+    <string name="dialogMessage">Siz rostan ham chiqmoqchimisiz?</string>
+    <string name="yes">Xa</string>
+    <string name="no">Yo\`q</string>
+    <string name="tv_balance">Sizda: %s bal bor</string>
+    <string name="text_error">Add sms code</string>
+    <string name="text_add_pin">Введите PIN-код еще раз</string>
+    <string name="text_second_pin_error" />
+</resources>

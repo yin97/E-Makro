@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_baseline_menu_24"
-        app:backgroundTint="@color/semi_black"
+        android:src="@drawable/ic_baseline_logout_24"
+        app:backgroundTint="@color/carbon_red_900"
         app:elevation="1dp"
         app:layout_anchor="@id/bottom_app_bar"
         app:tint="@color/white" />
@@ -38,6 +38,7 @@
         android:layout_gravity="bottom"
         app:backgroundTint="#DEF7EC"
         app:elevation="1dp"
+        android:visibility="invisible"
         app:fabCradleMargin="10dp"
         app:fabCradleRoundedCornerRadius="60dp"
         app:fabCradleVerticalOffset="20dp">

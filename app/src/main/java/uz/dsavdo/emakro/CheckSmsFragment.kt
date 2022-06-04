@@ -28,12 +28,18 @@ class CheckSmsFragment : Fragment() {
 
         binding.etRegistrationSmsCode.setMaskOn(button = binding.btnNext, activity = activity)
 
-        binding.btnNext.setOnClickListener {
-            viewModel.checkSms(
-                this,
-                viewModel.phoneNumber,
-                binding.etRegistrationSmsCode.getMaskedPhoneWithoutSpace()
-            )
+        binding.apply {
+            btnNext.setOnClickListener {
+                if (etRegistrationSmsCode.text?.isNotEmpty() == true){
+                    viewModel.checkSms(
+                        this@CheckSmsFragment,
+                        viewModel.phoneNumber,
+                        etRegistrationSmsCode.getMaskedPhoneWithoutSpace()
+                    )
+                }else{
+                    etRegistrationSmsCode.error = resources.getString(R.string.text_error)
+                }
+            }
         }
 
         return binding.root

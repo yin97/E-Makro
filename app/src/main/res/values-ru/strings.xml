@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">E-Makro</string>
+    <string name="title_home">Home</string>
+    <string name="title_order">Order</string>
+    <string name="title_fab">Fab</string>
+    <string name="title_category">Category</string>
+    <string name="title_qr">QR Scanner</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="text_search">Search</string>
+    <string name="text_balance">Balance:</string>
+    <string name="text_points">Points</string>
+    <string name="text_monthly_expenses">Monthly\nExpenses</string>
+    <string name="text_promotions">Promotions</string>
+    <string name="tv_all">ALL ></string>
+    <string name="text_product_for">Products for</string>
+    <string name="text_news">News</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_welcome">Добро пожаловать!</string>
+    <string name="text_next">Следующий</string>
+    <string name="text_select_language">Выберите ваш язык</string>
+    <string name="text_oferta">Нажимая \'Продолжить\' вы соглашаетесь \nс условиями оферты и даете согласие \nна обработку персональных данных</string>
+    <string name="forgot_pin">Забыли PIN-код?</string>
+    <string name="text_change_phone_number">Изменить номер телефона</string>
+    <string name="please_enter_nyour_pin">Пожалуйста, введите\nваш пин-код</string>
+    <string name="text_auth_snack">Нужна авторизация</string>
+    <string name="dialogTitle">Выйти</string>
+    <string name="dialogMessage">Уверены ли вы?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="tv_balance">Ваш баланс: %s баллов</string>
+    <string name="text_error">Add sms code</string>
+    <string name="text_add_pin">Введите PIN-код еще раз</string>
+    <string name="text_second_pin_error" />
+</resources>

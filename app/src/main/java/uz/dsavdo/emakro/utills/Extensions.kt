@@ -3,6 +3,7 @@ package uz.dsavdo.emakro.utills
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -25,11 +26,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
+import com.google.zxing.MultiFormatWriter
 import com.google.zxing.qrcode.QRCodeWriter
 import com.redmadrobot.inputmask.MaskedTextChangedListener
 import com.redmadrobot.inputmask.helper.AffinityCalculationStrategy
 import uz.dsavdo.emakro.R
 import uz.dsavdo.emakro.ui.enter.EnterActivity
+import java.util.*
 
 fun Activity.changeColorStatusBar(isChange: Boolean) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -55,6 +58,15 @@ fun String.setColoredPartOfString(color: String? = null, idiom: String): Spannab
         )
     }
     return customText
+}
+
+fun Activity.setLocale(languageCode: String) {
+    val locale = Locale(languageCode)
+    Locale.setDefault(locale)
+    val resources: Resources = this.resources
+    val config: Configuration = resources.configuration
+    config.setLocale(locale)
+    resources.updateConfiguration(config, resources.displayMetrics)
 }
 
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
@@ -109,6 +121,37 @@ fun Long.getQrCodeBitmap(context: Context): Bitmap {
             }
         }
     }
+}
+
+fun Long.createLinearBarcodeBitmap(context: Context): Bitmap {
+    val multiFormatWriter = MultiFormatWriter()
+    val size = 512 //pixels
+    val bitMatrix = multiFormatWriter.encode(this.toString(), BarcodeFormat.CODE_128, size, size)
+    return Bitmap.createBitmap(size, size, Bitmap.Config.RGB_565).also {
+        for (x in 0 until size) {
+            for (y in 0 until size) {
+                it.setPixel(
+                    x,
+                    y,
+                    when {
+                        bitMatrix[x, y] -> Color.BLACK
+                        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> {
+                            context.resources.getColor(
+                                R.color.background,
+                                context.theme
+                            )
+                        }
+                        else -> {
+                            context.resources.getColor(
+                                R.color.background
+                            )
+                        }
+                    }
+                )
+            }
+        }
+    }
+
 }
 
 fun EditText.setMaskOn(button: Button? = null, activity: Activity?, textView: TextView? = null) {

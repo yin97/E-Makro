@@ -26,7 +26,7 @@ data class UserData(
 
 data class CardResponse(
     val id: Long? = null,
-    val bot_id: Long? = null,
+    val bot_id: Int? = null,
     val client_id: Long? = null,
     val amount: String? = null,
     val artix_id: String? = null,

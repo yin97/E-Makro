@@ -20,9 +20,17 @@
     <string name="text_welcome">Welcome!</string>
     <string name="text_next">Next</string>
     <string name="text_select_language">Select your language</string>
-    <string name="text_oferta">Нажимая \'Продолжить\' вы соглашаетесь \nс условиями оферты и даете согласие \nна обработку персональных данных</string>
+    <string name="text_oferta">By clicking \'Continue\' you agree \nwith the terms of the offer and give consent \nto the processing of personal data</string>
     <string name="forgot_pin">Forgot PIN?</string>
     <string name="text_change_phone_number">Change phone number</string>
     <string name="please_enter_nyour_pin">Please, enter \nyour pin</string>
     <string name="text_auth_snack">Need Auth</string>
+    <string name="dialogTitle">Log out</string>
+    <string name="dialogMessage">Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="tv_balance">Your balance: %s points</string>
+    <string name="text_error">Add sms code</string>
+    <string name="text_add_pin">Введите PIN-код еще раз</string>
+    <string name="text_second_pin_error">Пин-код не совпадал с предыдущим</string>
 </resources>

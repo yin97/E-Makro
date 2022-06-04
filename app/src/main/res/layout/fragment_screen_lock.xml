@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/tv_forgot_pin"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
@@ -19,7 +19,7 @@
         android:padding="10dp"
         android:text="@string/forgot_pin"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/tv_enter_pin"
         app:layout_constraintEnd_toStartOf="@id/tv_change_phone_number"
@@ -28,7 +28,7 @@
 
     <TextView
         android:id="@+id/tv_change_phone_number"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
@@ -37,7 +37,7 @@
         android:padding="10dp"
         android:text="@string/text_change_phone_number"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/tv_forgot_pin"
         app:layout_constraintEnd_toEndOf="parent"

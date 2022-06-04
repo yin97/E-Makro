@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,6 +15,7 @@ import uz.dsavdo.emakro.network.Constants.Companion.LOGIN_ON
 import uz.dsavdo.emakro.ui.enter.EnterViewModel
 import uz.dsavdo.emakro.ui.main.MainActivity
 import uz.dsavdo.emakro.utills.SharedPrefs
+import uz.dsavdo.emakro.utills.getMaskedPhoneWithoutSpace
 
 @AndroidEntryPoint
 class ScreenLockFragment : Fragment() {
@@ -32,6 +34,9 @@ class ScreenLockFragment : Fragment() {
 
     private var _binding: FragmentScreenLockBinding? = null
     private val binding get() = _binding!!
+    private var count = 0
+    private var nextStage = -1
+    private var firstPin = ""
 
     private val viewModel: EnterViewModel by activityViewModels()
     override fun onCreateView(
@@ -40,6 +45,8 @@ class ScreenLockFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentScreenLockBinding.inflate(inflater, container, false)
+
+        nextStage = arguments?.getInt("stage") ?: -1
 
         binding.zeroKeyboard.setOnClickListener { onNumberButtonClick(ZERO) }
         binding.firstKeyboard.setOnClickListener { onNumberButtonClick(ONE) }
@@ -76,12 +83,40 @@ class ScreenLockFragment : Fragment() {
         if (number != "10") {
             if (currentValue.length != 4) {
                 binding.etPinCodeNumber.setText("${currentValue}${number}")
-                if (binding.etPinCodeNumber.text.toString().length == 4)
-                    viewModel.login(
-                        this,
-                        viewModel.phoneNumber,
-                        binding.etPinCodeNumber.text.toString()
-                    )
+                if (binding.etPinCodeNumber.text.toString().length == 4) {
+                    if (nextStage == 3 && count == 0) {
+                        firstPin = binding.etPinCodeNumber.text.toString()
+                        binding.etPinCodeNumber.setText("")
+                        Toast.makeText(
+                            requireContext(),
+                            resources.getText(R.string.text_add_pin),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        count++
+                    } else if (nextStage == 3 && count == 1) {
+                        if (binding.etPinCodeNumber.text.toString() == firstPin) {
+                            viewModel.register(
+                                this,
+                                viewModel.phoneNumber,
+                                viewModel.registerSmsCode,
+                                binding.etPinCodeNumber.text.toString()
+                            )
+                        }else{
+                            Toast.makeText(
+                                requireContext(),
+                                resources.getText(R.string.text_second_pin_error),
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                        }
+                    } else if (nextStage == 4) {
+                        viewModel.login(
+                            this,
+                            viewModel.phoneNumber,
+                            binding.etPinCodeNumber.text.toString()
+                        )
+                    }
+                }
             }
         } else {
             if (currentValue.length in 1..4) {
@@ -95,4 +130,6 @@ class ScreenLockFragment : Fragment() {
         }
 
     }
+
+
 }

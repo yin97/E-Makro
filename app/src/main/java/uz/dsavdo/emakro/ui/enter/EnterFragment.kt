@@ -8,10 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
+import com.yariksoffice.lingver.Lingver
 import dagger.hilt.android.AndroidEntryPoint
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import uz.dsavdo.emakro.R
+import uz.dsavdo.emakro.app.MainApplication
 import uz.dsavdo.emakro.databinding.FragmentEnterBinding
 import uz.dsavdo.emakro.network.Constants.Companion.BASE_URL
 import uz.dsavdo.emakro.utills.getMaskedPhoneWithoutSpace
@@ -48,21 +47,51 @@ class EnterFragment : Fragment() {
             it.isSelected = true
             binding.languageRu.isSelected = false
             binding.languageEng.isSelected = false
+            changeLanguage(MainApplication.LANGUAGE_UZBEKISTAN)
         }
 
         binding.languageRu.setOnClickListener {
             it.isSelected = true
             binding.languageUz.isSelected = false
             binding.languageEng.isSelected = false
+            changeLanguage(MainApplication.LANGUAGE_RUSSIAN)
         }
 
         binding.languageEng.setOnClickListener {
             it.isSelected = true
             binding.languageUz.isSelected = false
             binding.languageRu.isSelected = false
+            changeLanguage(MainApplication.LANGUAGE_ENGLISH)
         }
+
+        when (Lingver.getInstance().getLanguage()) {
+            MainApplication.LANGUAGE_RUSSIAN -> {
+                binding.languageRu.isSelected = true
+                binding.languageUz.isSelected = false
+                binding.languageEng.isSelected = false
+            }
+            MainApplication.LANGUAGE_UZBEKISTAN -> {
+                binding.languageUz.isSelected = true
+                binding.languageRu.isSelected = false
+                binding.languageEng.isSelected = false
+            }
+            MainApplication.LANGUAGE_ENGLISH -> {
+                binding.languageEng.isSelected = true
+                binding.languageUz.isSelected = false
+                binding.languageRu.isSelected = false
+            }
+        }
+
 
         return binding.root
     }
+
+    private fun changeLanguage(lang: String) {
+        Lingver.getInstance().setLocale(requireContext(), lang)
+        startActivity(Intent(requireContext(), EnterActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        })
+    }
+
 
 }
